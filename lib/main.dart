@@ -43,8 +43,8 @@ class MyHomePage extends StatelessWidget {
           Container(
             width: double.infinity,
             child: const Card(
-              child: Text('Gráfico'),
               elevation: 5,
+              child: Text('Gráfico'),
             ),
           ),
           Column(
@@ -53,25 +53,42 @@ class MyHomePage extends StatelessWidget {
                 child: Row(
                   children: <Widget>[
                     Container(
-                      margin: EdgeInsets.symmetric(
+                      margin: const EdgeInsets.symmetric(
                         horizontal: 15,
                         vertical: 10
                       ),
                       decoration: BoxDecoration(
                         border: Border.all(
-                          color: Colors.black,
+                          color: Colors.purple,
                           width: 2,
                         )
                       ),
-                      padding: EdgeInsets.all(10),
+                      padding: const EdgeInsets.all(10),
                       child: Text(
-                        tr.value.toString()
+                        tr.value.toString(),
+                        style: const TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20,
+                          color: Colors.purple,
+                        ),
                       ),
                     ),
                     Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        Text(tr.title),
-                        Text(tr.date.toString())
+                        Text(
+                          tr.title,
+                          style: const TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        Text(
+                          tr.date.toString(),
+                          style: const TextStyle(
+                            color: Color.fromARGB(255, 133, 132, 132),
+                          ),
+                        )
                       ],
                     )
                   ],

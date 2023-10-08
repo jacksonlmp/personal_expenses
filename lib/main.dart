@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:personal_expenses/models/transaction.dart';
 
 main() => runApp(const ExpensesApp());
 
@@ -12,7 +13,28 @@ class ExpensesApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget {
-  const MyHomePage({super.key});
+  final _transactions = [
+    Transaction(
+      id: 'T1',
+      title: "Tênis corrida",
+      value: 350,
+      date: DateTime.now(),
+    ),
+    Transaction(
+      id: 'T2',
+      title: "Carro",
+      value: 350,
+      date: DateTime.now(),
+    ),
+    Transaction(
+      id: 'T3',
+      title: "Moto",
+      value: 350,
+      date: DateTime.now(),
+    ),
+  ];
+
+  MyHomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -31,8 +53,12 @@ class MyHomePage extends StatelessWidget {
               child: Text('Gráfico'),
             ),
           ),
-          Card(
-            child: Text('Lista de Transações'),
+          Column(
+            children: <Widget>[
+              ..._transactions.map((tr) {
+                
+              })
+            ],
           )
         ],
       ),
